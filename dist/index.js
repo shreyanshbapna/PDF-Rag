@@ -6,6 +6,10 @@ const client = new OpenAI({
     baseURL: 'https://openrouter.ai/api/v1',
     apiKey: process.env.OPENROUTER_API_KEY,
 });
+import { PrismaClient } from "./generated/prisma/client.js";
+import { PrismaPg } from "@prisma/adapter-pg";
+const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
+const prisma = new PrismaClient({ adapter });
 function cosineSimilarity(a, b) {
     const dot = a.reduce((sum, val, i) => sum + val * (b[i] ?? 0), 0);
     const magA = Math.sqrt(a.reduce((sum, val) => sum + val * val, 0));
@@ -20,6 +24,13 @@ async function main() {
         chunkOverlap: 20,
     });
     const chunks = await splitter.splitText(paragraph);
+    const document = await prisma.document.create({
+        data: {
+            name: 'Sample Document',
+            content: paragraph,
+        },
+    });
+    console.log('Document saved with ID:', document.id);
     // Step 2: Embed all chunks
     const chunkEmbeddings = await Promise.all(chunks.map(async (chunk) => {
         const response = await client.embeddings.create({

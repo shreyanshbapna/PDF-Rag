@@ -8,13 +8,11 @@ const client = new OpenAI({
   apiKey: process.env.OPENROUTER_API_KEY,
 });
 
-import { PrismaClient } from "./generated/client";
-// Import the driver adapter for your specific database (example uses PostgreSQL)
+import { PrismaClient } from "./generated/prisma/client.js"
 import { PrismaPg } from "@prisma/adapter-pg";
-// Initialize the adapter according to your driver's requirements
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
-// Pass the adapter instance to PrismaClient
 const prisma = new PrismaClient({ adapter });
+
 
 function cosineSimilarity(a: number[], b: number[]): number {
     const dot   = a.reduce((sum, val, i) => sum + val * (b[i] ?? 0), 0);
@@ -31,8 +29,16 @@ async function main() {
     chunkSize: 100,
     chunkOverlap: 20,
   });
+
   const chunks = await splitter.splitText(paragraph);
 
+  const document = await prisma.document.create({
+    data: {
+      name: 'Sample Document',
+      content: paragraph,
+    },
+  });
+  console.log('Document saved with ID:', document.id);
 
   // Step 2: Embed all chunks
   const chunkEmbeddings = await Promise.all(
