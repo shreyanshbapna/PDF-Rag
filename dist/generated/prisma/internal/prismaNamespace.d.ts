@@ -347,18 +347,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                     args: Prisma.ChunkFindManyArgs<ExtArgs>;
                     result: runtime.Types.Utils.PayloadToResult<Prisma.$ChunkPayload>[];
                 };
-                create: {
-                    args: Prisma.ChunkCreateArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ChunkPayload>;
-                };
-                createMany: {
-                    args: Prisma.ChunkCreateManyArgs<ExtArgs>;
-                    result: BatchPayload;
-                };
-                createManyAndReturn: {
-                    args: Prisma.ChunkCreateManyAndReturnArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ChunkPayload>[];
-                };
                 delete: {
                     args: Prisma.ChunkDeleteArgs<ExtArgs>;
                     result: runtime.Types.Utils.PayloadToResult<Prisma.$ChunkPayload>;
@@ -378,10 +366,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 updateManyAndReturn: {
                     args: Prisma.ChunkUpdateManyAndReturnArgs<ExtArgs>;
                     result: runtime.Types.Utils.PayloadToResult<Prisma.$ChunkPayload>[];
-                };
-                upsert: {
-                    args: Prisma.ChunkUpsertArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ChunkPayload>;
                 };
                 aggregate: {
                     args: Prisma.ChunkAggregateArgs<ExtArgs>;
@@ -433,18 +417,13 @@ export declare const TransactionIsolationLevel: {
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
 export declare const DocumentScalarFieldEnum: {
     readonly id: "id";
-    readonly name: "name";
     readonly content: "content";
-    readonly createdAt: "createdAt";
-    readonly updatedAt: "updatedAt";
 };
 export type DocumentScalarFieldEnum = (typeof DocumentScalarFieldEnum)[keyof typeof DocumentScalarFieldEnum];
 export declare const ChunkScalarFieldEnum: {
     readonly id: "id";
     readonly documentId: "documentId";
     readonly content: "content";
-    readonly createdAt: "createdAt";
-    readonly updatedAt: "updatedAt";
 };
 export type ChunkScalarFieldEnum = (typeof ChunkScalarFieldEnum)[keyof typeof ChunkScalarFieldEnum];
 export declare const SortOrder: {
@@ -468,14 +447,6 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
  * Reference to a field of type 'String[]'
  */
 export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>;
-/**
- * Reference to a field of type 'DateTime'
- */
-export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>;
-/**
- * Reference to a field of type 'DateTime[]'
- */
-export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>;
 /**
  * Reference to a field of type 'Int'
  */

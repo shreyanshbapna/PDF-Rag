@@ -12,46 +12,28 @@ export type AggregateDocument = {
 };
 export type DocumentMinAggregateOutputType = {
     id: string | null;
-    name: string | null;
     content: string | null;
-    createdAt: Date | null;
-    updatedAt: Date | null;
 };
 export type DocumentMaxAggregateOutputType = {
     id: string | null;
-    name: string | null;
     content: string | null;
-    createdAt: Date | null;
-    updatedAt: Date | null;
 };
 export type DocumentCountAggregateOutputType = {
     id: number;
-    name: number;
     content: number;
-    createdAt: number;
-    updatedAt: number;
     _all: number;
 };
 export type DocumentMinAggregateInputType = {
     id?: true;
-    name?: true;
     content?: true;
-    createdAt?: true;
-    updatedAt?: true;
 };
 export type DocumentMaxAggregateInputType = {
     id?: true;
-    name?: true;
     content?: true;
-    createdAt?: true;
-    updatedAt?: true;
 };
 export type DocumentCountAggregateInputType = {
     id?: true;
-    name?: true;
     content?: true;
-    createdAt?: true;
-    updatedAt?: true;
     _all?: true;
 };
 export type DocumentAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -118,10 +100,7 @@ export type DocumentGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 };
 export type DocumentGroupByOutputType = {
     id: string;
-    name: string;
     content: string;
-    createdAt: Date;
-    updatedAt: Date;
     _count: DocumentCountAggregateOutputType | null;
     _min: DocumentMinAggregateOutputType | null;
     _max: DocumentMaxAggregateOutputType | null;
@@ -134,18 +113,12 @@ export type DocumentWhereInput = {
     OR?: Prisma.DocumentWhereInput[];
     NOT?: Prisma.DocumentWhereInput | Prisma.DocumentWhereInput[];
     id?: Prisma.StringFilter<"Document"> | string;
-    name?: Prisma.StringFilter<"Document"> | string;
     content?: Prisma.StringFilter<"Document"> | string;
-    createdAt?: Prisma.DateTimeFilter<"Document"> | Date | string;
-    updatedAt?: Prisma.DateTimeFilter<"Document"> | Date | string;
     Chunks?: Prisma.ChunkListRelationFilter;
 };
 export type DocumentOrderByWithRelationInput = {
     id?: Prisma.SortOrder;
-    name?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
     Chunks?: Prisma.ChunkOrderByRelationAggregateInput;
 };
 export type DocumentWhereUniqueInput = Prisma.AtLeast<{
@@ -153,18 +126,12 @@ export type DocumentWhereUniqueInput = Prisma.AtLeast<{
     AND?: Prisma.DocumentWhereInput | Prisma.DocumentWhereInput[];
     OR?: Prisma.DocumentWhereInput[];
     NOT?: Prisma.DocumentWhereInput | Prisma.DocumentWhereInput[];
-    name?: Prisma.StringFilter<"Document"> | string;
     content?: Prisma.StringFilter<"Document"> | string;
-    createdAt?: Prisma.DateTimeFilter<"Document"> | Date | string;
-    updatedAt?: Prisma.DateTimeFilter<"Document"> | Date | string;
     Chunks?: Prisma.ChunkListRelationFilter;
 }, "id">;
 export type DocumentOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
-    name?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
     _count?: Prisma.DocumentCountOrderByAggregateInput;
     _max?: Prisma.DocumentMaxOrderByAggregateInput;
     _min?: Prisma.DocumentMinOrderByAggregateInput;
@@ -174,84 +141,51 @@ export type DocumentScalarWhereWithAggregatesInput = {
     OR?: Prisma.DocumentScalarWhereWithAggregatesInput[];
     NOT?: Prisma.DocumentScalarWhereWithAggregatesInput | Prisma.DocumentScalarWhereWithAggregatesInput[];
     id?: Prisma.StringWithAggregatesFilter<"Document"> | string;
-    name?: Prisma.StringWithAggregatesFilter<"Document"> | string;
     content?: Prisma.StringWithAggregatesFilter<"Document"> | string;
-    createdAt?: Prisma.DateTimeWithAggregatesFilter<"Document"> | Date | string;
-    updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Document"> | Date | string;
 };
 export type DocumentCreateInput = {
     id?: string;
-    name: string;
     content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     Chunks?: Prisma.ChunkCreateNestedManyWithoutDocumentInput;
 };
 export type DocumentUncheckedCreateInput = {
     id?: string;
-    name: string;
     content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     Chunks?: Prisma.ChunkUncheckedCreateNestedManyWithoutDocumentInput;
 };
 export type DocumentUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
-    name?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     Chunks?: Prisma.ChunkUpdateManyWithoutDocumentNestedInput;
 };
 export type DocumentUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
-    name?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     Chunks?: Prisma.ChunkUncheckedUpdateManyWithoutDocumentNestedInput;
 };
 export type DocumentCreateManyInput = {
     id?: string;
-    name: string;
     content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
 };
 export type DocumentUpdateManyMutationInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
-    name?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type DocumentUncheckedUpdateManyInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
-    name?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type DocumentCountOrderByAggregateInput = {
     id?: Prisma.SortOrder;
-    name?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
 };
 export type DocumentMaxOrderByAggregateInput = {
     id?: Prisma.SortOrder;
-    name?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
 };
 export type DocumentMinOrderByAggregateInput = {
     id?: Prisma.SortOrder;
-    name?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
 };
 export type DocumentScalarRelationFilter = {
     is?: Prisma.DocumentWhereInput;
@@ -259,14 +193,6 @@ export type DocumentScalarRelationFilter = {
 };
 export type StringFieldUpdateOperationsInput = {
     set?: string;
-};
-export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string;
-};
-export type DocumentCreateNestedOneWithoutChunksInput = {
-    create?: Prisma.XOR<Prisma.DocumentCreateWithoutChunksInput, Prisma.DocumentUncheckedCreateWithoutChunksInput>;
-    connectOrCreate?: Prisma.DocumentCreateOrConnectWithoutChunksInput;
-    connect?: Prisma.DocumentWhereUniqueInput;
 };
 export type DocumentUpdateOneRequiredWithoutChunksNestedInput = {
     create?: Prisma.XOR<Prisma.DocumentCreateWithoutChunksInput, Prisma.DocumentUncheckedCreateWithoutChunksInput>;
@@ -277,17 +203,11 @@ export type DocumentUpdateOneRequiredWithoutChunksNestedInput = {
 };
 export type DocumentCreateWithoutChunksInput = {
     id?: string;
-    name: string;
     content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
 };
 export type DocumentUncheckedCreateWithoutChunksInput = {
     id?: string;
-    name: string;
     content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
 };
 export type DocumentCreateOrConnectWithoutChunksInput = {
     where: Prisma.DocumentWhereUniqueInput;
@@ -304,17 +224,11 @@ export type DocumentUpdateToOneWithWhereWithoutChunksInput = {
 };
 export type DocumentUpdateWithoutChunksInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
-    name?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type DocumentUncheckedUpdateWithoutChunksInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
-    name?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 /**
  * Count Type DocumentCountOutputType
@@ -342,35 +256,23 @@ export type DocumentCountOutputTypeCountChunksArgs<ExtArgs extends runtime.Types
 };
 export type DocumentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
-    name?: boolean;
     content?: boolean;
-    createdAt?: boolean;
-    updatedAt?: boolean;
     Chunks?: boolean | Prisma.Document$ChunksArgs<ExtArgs>;
     _count?: boolean | Prisma.DocumentCountOutputTypeDefaultArgs<ExtArgs>;
 }, ExtArgs["result"]["document"]>;
 export type DocumentSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
-    name?: boolean;
     content?: boolean;
-    createdAt?: boolean;
-    updatedAt?: boolean;
 }, ExtArgs["result"]["document"]>;
 export type DocumentSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
-    name?: boolean;
     content?: boolean;
-    createdAt?: boolean;
-    updatedAt?: boolean;
 }, ExtArgs["result"]["document"]>;
 export type DocumentSelectScalar = {
     id?: boolean;
-    name?: boolean;
     content?: boolean;
-    createdAt?: boolean;
-    updatedAt?: boolean;
 };
-export type DocumentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "content" | "createdAt" | "updatedAt", ExtArgs["result"]["document"]>;
+export type DocumentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "content", ExtArgs["result"]["document"]>;
 export type DocumentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     Chunks?: boolean | Prisma.Document$ChunksArgs<ExtArgs>;
     _count?: boolean | Prisma.DocumentCountOutputTypeDefaultArgs<ExtArgs>;
@@ -384,10 +286,7 @@ export type $DocumentPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
-        name: string;
         content: string;
-        createdAt: Date;
-        updatedAt: Date;
     }, ExtArgs["result"]["document"]>;
     composites: {};
 };
@@ -744,10 +643,7 @@ export interface Prisma__DocumentClient<T, Null = never, ExtArgs extends runtime
  */
 export interface DocumentFieldRefs {
     readonly id: Prisma.FieldRef<"Document", 'String'>;
-    readonly name: Prisma.FieldRef<"Document", 'String'>;
     readonly content: Prisma.FieldRef<"Document", 'String'>;
-    readonly createdAt: Prisma.FieldRef<"Document", 'DateTime'>;
-    readonly updatedAt: Prisma.FieldRef<"Document", 'DateTime'>;
 }
 /**
  * Document findUnique

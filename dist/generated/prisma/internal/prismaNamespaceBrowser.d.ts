@@ -39,18 +39,13 @@ export declare const TransactionIsolationLevel: {
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
 export declare const DocumentScalarFieldEnum: {
     readonly id: "id";
-    readonly name: "name";
     readonly content: "content";
-    readonly createdAt: "createdAt";
-    readonly updatedAt: "updatedAt";
 };
 export type DocumentScalarFieldEnum = (typeof DocumentScalarFieldEnum)[keyof typeof DocumentScalarFieldEnum];
 export declare const ChunkScalarFieldEnum: {
     readonly id: "id";
     readonly documentId: "documentId";
     readonly content: "content";
-    readonly createdAt: "createdAt";
-    readonly updatedAt: "updatedAt";
 };
 export type ChunkScalarFieldEnum = (typeof ChunkScalarFieldEnum)[keyof typeof ChunkScalarFieldEnum];
 export declare const SortOrder: {

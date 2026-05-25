@@ -14,44 +14,32 @@ export type ChunkMinAggregateOutputType = {
     id: string | null;
     documentId: string | null;
     content: string | null;
-    createdAt: Date | null;
-    updatedAt: Date | null;
 };
 export type ChunkMaxAggregateOutputType = {
     id: string | null;
     documentId: string | null;
     content: string | null;
-    createdAt: Date | null;
-    updatedAt: Date | null;
 };
 export type ChunkCountAggregateOutputType = {
     id: number;
     documentId: number;
     content: number;
-    createdAt: number;
-    updatedAt: number;
     _all: number;
 };
 export type ChunkMinAggregateInputType = {
     id?: true;
     documentId?: true;
     content?: true;
-    createdAt?: true;
-    updatedAt?: true;
 };
 export type ChunkMaxAggregateInputType = {
     id?: true;
     documentId?: true;
     content?: true;
-    createdAt?: true;
-    updatedAt?: true;
 };
 export type ChunkCountAggregateInputType = {
     id?: true;
     documentId?: true;
     content?: true;
-    createdAt?: true;
-    updatedAt?: true;
     _all?: true;
 };
 export type ChunkAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -120,8 +108,6 @@ export type ChunkGroupByOutputType = {
     id: string;
     documentId: string;
     content: string;
-    createdAt: Date;
-    updatedAt: Date;
     _count: ChunkCountAggregateOutputType | null;
     _min: ChunkMinAggregateOutputType | null;
     _max: ChunkMaxAggregateOutputType | null;
@@ -136,17 +122,13 @@ export type ChunkWhereInput = {
     id?: Prisma.StringFilter<"Chunk"> | string;
     documentId?: Prisma.StringFilter<"Chunk"> | string;
     content?: Prisma.StringFilter<"Chunk"> | string;
-    createdAt?: Prisma.DateTimeFilter<"Chunk"> | Date | string;
-    updatedAt?: Prisma.DateTimeFilter<"Chunk"> | Date | string;
-    Document?: Prisma.XOR<Prisma.DocumentScalarRelationFilter, Prisma.DocumentWhereInput>;
+    document?: Prisma.XOR<Prisma.DocumentScalarRelationFilter, Prisma.DocumentWhereInput>;
 };
 export type ChunkOrderByWithRelationInput = {
     id?: Prisma.SortOrder;
     documentId?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
-    Document?: Prisma.DocumentOrderByWithRelationInput;
+    document?: Prisma.DocumentOrderByWithRelationInput;
 };
 export type ChunkWhereUniqueInput = Prisma.AtLeast<{
     id?: string;
@@ -155,16 +137,12 @@ export type ChunkWhereUniqueInput = Prisma.AtLeast<{
     NOT?: Prisma.ChunkWhereInput | Prisma.ChunkWhereInput[];
     documentId?: Prisma.StringFilter<"Chunk"> | string;
     content?: Prisma.StringFilter<"Chunk"> | string;
-    createdAt?: Prisma.DateTimeFilter<"Chunk"> | Date | string;
-    updatedAt?: Prisma.DateTimeFilter<"Chunk"> | Date | string;
-    Document?: Prisma.XOR<Prisma.DocumentScalarRelationFilter, Prisma.DocumentWhereInput>;
+    document?: Prisma.XOR<Prisma.DocumentScalarRelationFilter, Prisma.DocumentWhereInput>;
 }, "id">;
 export type ChunkOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
     documentId?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
     _count?: Prisma.ChunkCountOrderByAggregateInput;
     _max?: Prisma.ChunkMaxOrderByAggregateInput;
     _min?: Prisma.ChunkMinOrderByAggregateInput;
@@ -176,56 +154,25 @@ export type ChunkScalarWhereWithAggregatesInput = {
     id?: Prisma.StringWithAggregatesFilter<"Chunk"> | string;
     documentId?: Prisma.StringWithAggregatesFilter<"Chunk"> | string;
     content?: Prisma.StringWithAggregatesFilter<"Chunk"> | string;
-    createdAt?: Prisma.DateTimeWithAggregatesFilter<"Chunk"> | Date | string;
-    updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Chunk"> | Date | string;
-};
-export type ChunkCreateInput = {
-    id?: string;
-    content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
-    Document: Prisma.DocumentCreateNestedOneWithoutChunksInput;
-};
-export type ChunkUncheckedCreateInput = {
-    id?: string;
-    documentId: string;
-    content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
 };
 export type ChunkUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    Document?: Prisma.DocumentUpdateOneRequiredWithoutChunksNestedInput;
+    document?: Prisma.DocumentUpdateOneRequiredWithoutChunksNestedInput;
 };
 export type ChunkUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     documentId?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-};
-export type ChunkCreateManyInput = {
-    id?: string;
-    documentId: string;
-    content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
 };
 export type ChunkUpdateManyMutationInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type ChunkUncheckedUpdateManyInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     documentId?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type ChunkListRelationFilter = {
     every?: Prisma.ChunkWhereInput;
@@ -239,40 +186,24 @@ export type ChunkCountOrderByAggregateInput = {
     id?: Prisma.SortOrder;
     documentId?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
 };
 export type ChunkMaxOrderByAggregateInput = {
     id?: Prisma.SortOrder;
     documentId?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
 };
 export type ChunkMinOrderByAggregateInput = {
     id?: Prisma.SortOrder;
     documentId?: Prisma.SortOrder;
     content?: Prisma.SortOrder;
-    createdAt?: Prisma.SortOrder;
-    updatedAt?: Prisma.SortOrder;
 };
 export type ChunkCreateNestedManyWithoutDocumentInput = {
-    create?: Prisma.XOR<Prisma.ChunkCreateWithoutDocumentInput, Prisma.ChunkUncheckedCreateWithoutDocumentInput> | Prisma.ChunkCreateWithoutDocumentInput[] | Prisma.ChunkUncheckedCreateWithoutDocumentInput[];
-    connectOrCreate?: Prisma.ChunkCreateOrConnectWithoutDocumentInput | Prisma.ChunkCreateOrConnectWithoutDocumentInput[];
-    createMany?: Prisma.ChunkCreateManyDocumentInputEnvelope;
     connect?: Prisma.ChunkWhereUniqueInput | Prisma.ChunkWhereUniqueInput[];
 };
 export type ChunkUncheckedCreateNestedManyWithoutDocumentInput = {
-    create?: Prisma.XOR<Prisma.ChunkCreateWithoutDocumentInput, Prisma.ChunkUncheckedCreateWithoutDocumentInput> | Prisma.ChunkCreateWithoutDocumentInput[] | Prisma.ChunkUncheckedCreateWithoutDocumentInput[];
-    connectOrCreate?: Prisma.ChunkCreateOrConnectWithoutDocumentInput | Prisma.ChunkCreateOrConnectWithoutDocumentInput[];
-    createMany?: Prisma.ChunkCreateManyDocumentInputEnvelope;
     connect?: Prisma.ChunkWhereUniqueInput | Prisma.ChunkWhereUniqueInput[];
 };
 export type ChunkUpdateManyWithoutDocumentNestedInput = {
-    create?: Prisma.XOR<Prisma.ChunkCreateWithoutDocumentInput, Prisma.ChunkUncheckedCreateWithoutDocumentInput> | Prisma.ChunkCreateWithoutDocumentInput[] | Prisma.ChunkUncheckedCreateWithoutDocumentInput[];
-    connectOrCreate?: Prisma.ChunkCreateOrConnectWithoutDocumentInput | Prisma.ChunkCreateOrConnectWithoutDocumentInput[];
-    upsert?: Prisma.ChunkUpsertWithWhereUniqueWithoutDocumentInput | Prisma.ChunkUpsertWithWhereUniqueWithoutDocumentInput[];
-    createMany?: Prisma.ChunkCreateManyDocumentInputEnvelope;
     set?: Prisma.ChunkWhereUniqueInput | Prisma.ChunkWhereUniqueInput[];
     disconnect?: Prisma.ChunkWhereUniqueInput | Prisma.ChunkWhereUniqueInput[];
     delete?: Prisma.ChunkWhereUniqueInput | Prisma.ChunkWhereUniqueInput[];
@@ -282,10 +213,6 @@ export type ChunkUpdateManyWithoutDocumentNestedInput = {
     deleteMany?: Prisma.ChunkScalarWhereInput | Prisma.ChunkScalarWhereInput[];
 };
 export type ChunkUncheckedUpdateManyWithoutDocumentNestedInput = {
-    create?: Prisma.XOR<Prisma.ChunkCreateWithoutDocumentInput, Prisma.ChunkUncheckedCreateWithoutDocumentInput> | Prisma.ChunkCreateWithoutDocumentInput[] | Prisma.ChunkUncheckedCreateWithoutDocumentInput[];
-    connectOrCreate?: Prisma.ChunkCreateOrConnectWithoutDocumentInput | Prisma.ChunkCreateOrConnectWithoutDocumentInput[];
-    upsert?: Prisma.ChunkUpsertWithWhereUniqueWithoutDocumentInput | Prisma.ChunkUpsertWithWhereUniqueWithoutDocumentInput[];
-    createMany?: Prisma.ChunkCreateManyDocumentInputEnvelope;
     set?: Prisma.ChunkWhereUniqueInput | Prisma.ChunkWhereUniqueInput[];
     disconnect?: Prisma.ChunkWhereUniqueInput | Prisma.ChunkWhereUniqueInput[];
     delete?: Prisma.ChunkWhereUniqueInput | Prisma.ChunkWhereUniqueInput[];
@@ -293,31 +220,6 @@ export type ChunkUncheckedUpdateManyWithoutDocumentNestedInput = {
     update?: Prisma.ChunkUpdateWithWhereUniqueWithoutDocumentInput | Prisma.ChunkUpdateWithWhereUniqueWithoutDocumentInput[];
     updateMany?: Prisma.ChunkUpdateManyWithWhereWithoutDocumentInput | Prisma.ChunkUpdateManyWithWhereWithoutDocumentInput[];
     deleteMany?: Prisma.ChunkScalarWhereInput | Prisma.ChunkScalarWhereInput[];
-};
-export type ChunkCreateWithoutDocumentInput = {
-    id?: string;
-    content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
-};
-export type ChunkUncheckedCreateWithoutDocumentInput = {
-    id?: string;
-    content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
-};
-export type ChunkCreateOrConnectWithoutDocumentInput = {
-    where: Prisma.ChunkWhereUniqueInput;
-    create: Prisma.XOR<Prisma.ChunkCreateWithoutDocumentInput, Prisma.ChunkUncheckedCreateWithoutDocumentInput>;
-};
-export type ChunkCreateManyDocumentInputEnvelope = {
-    data: Prisma.ChunkCreateManyDocumentInput | Prisma.ChunkCreateManyDocumentInput[];
-    skipDuplicates?: boolean;
-};
-export type ChunkUpsertWithWhereUniqueWithoutDocumentInput = {
-    where: Prisma.ChunkWhereUniqueInput;
-    update: Prisma.XOR<Prisma.ChunkUpdateWithoutDocumentInput, Prisma.ChunkUncheckedUpdateWithoutDocumentInput>;
-    create: Prisma.XOR<Prisma.ChunkCreateWithoutDocumentInput, Prisma.ChunkUncheckedCreateWithoutDocumentInput>;
 };
 export type ChunkUpdateWithWhereUniqueWithoutDocumentInput = {
     where: Prisma.ChunkWhereUniqueInput;
@@ -334,85 +236,52 @@ export type ChunkScalarWhereInput = {
     id?: Prisma.StringFilter<"Chunk"> | string;
     documentId?: Prisma.StringFilter<"Chunk"> | string;
     content?: Prisma.StringFilter<"Chunk"> | string;
-    createdAt?: Prisma.DateTimeFilter<"Chunk"> | Date | string;
-    updatedAt?: Prisma.DateTimeFilter<"Chunk"> | Date | string;
-};
-export type ChunkCreateManyDocumentInput = {
-    id?: string;
-    content: string;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
 };
 export type ChunkUpdateWithoutDocumentInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type ChunkUncheckedUpdateWithoutDocumentInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type ChunkUncheckedUpdateManyWithoutDocumentInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     content?: Prisma.StringFieldUpdateOperationsInput | string;
-    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type ChunkSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
     documentId?: boolean;
     content?: boolean;
-    createdAt?: boolean;
-    updatedAt?: boolean;
-    Document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
-}, ExtArgs["result"]["chunk"]>;
-export type ChunkSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-    id?: boolean;
-    documentId?: boolean;
-    content?: boolean;
-    createdAt?: boolean;
-    updatedAt?: boolean;
-    Document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
+    document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
 }, ExtArgs["result"]["chunk"]>;
 export type ChunkSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
     documentId?: boolean;
     content?: boolean;
-    createdAt?: boolean;
-    updatedAt?: boolean;
-    Document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
+    document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
 }, ExtArgs["result"]["chunk"]>;
 export type ChunkSelectScalar = {
     id?: boolean;
     documentId?: boolean;
     content?: boolean;
-    createdAt?: boolean;
-    updatedAt?: boolean;
 };
-export type ChunkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "documentId" | "content" | "createdAt" | "updatedAt", ExtArgs["result"]["chunk"]>;
+export type ChunkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "documentId" | "content", ExtArgs["result"]["chunk"]>;
 export type ChunkInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    Document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
-};
-export type ChunkIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    Document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
+    document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
 };
 export type ChunkIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    Document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
+    document?: boolean | Prisma.DocumentDefaultArgs<ExtArgs>;
 };
 export type $ChunkPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     name: "Chunk";
     objects: {
-        Document: Prisma.$DocumentPayload<ExtArgs>;
+        document: Prisma.$DocumentPayload<ExtArgs>;
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
         documentId: string;
         content: string;
-        createdAt: Date;
-        updatedAt: Date;
     }, ExtArgs["result"]["chunk"]>;
     composites: {};
 };
@@ -498,55 +367,6 @@ export interface ChunkDelegate<ExtArgs extends runtime.Types.Extensions.Internal
      *
      */
     findMany<T extends ChunkFindManyArgs>(args?: Prisma.SelectSubset<T, ChunkFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ChunkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
-    /**
-     * Create a Chunk.
-     * @param {ChunkCreateArgs} args - Arguments to create a Chunk.
-     * @example
-     * // Create one Chunk
-     * const Chunk = await prisma.chunk.create({
-     *   data: {
-     *     // ... data to create a Chunk
-     *   }
-     * })
-     *
-     */
-    create<T extends ChunkCreateArgs>(args: Prisma.SelectSubset<T, ChunkCreateArgs<ExtArgs>>): Prisma.Prisma__ChunkClient<runtime.Types.Result.GetResult<Prisma.$ChunkPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
-    /**
-     * Create many Chunks.
-     * @param {ChunkCreateManyArgs} args - Arguments to create many Chunks.
-     * @example
-     * // Create many Chunks
-     * const chunk = await prisma.chunk.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *
-     */
-    createMany<T extends ChunkCreateManyArgs>(args?: Prisma.SelectSubset<T, ChunkCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
-    /**
-     * Create many Chunks and returns the data saved in the database.
-     * @param {ChunkCreateManyAndReturnArgs} args - Arguments to create many Chunks.
-     * @example
-     * // Create many Chunks
-     * const chunk = await prisma.chunk.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *
-     * // Create many Chunks and only return the `id`
-     * const chunkWithIdOnly = await prisma.chunk.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     *
-     */
-    createManyAndReturn<T extends ChunkCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, ChunkCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ChunkPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
     /**
      * Delete a Chunk.
      * @param {ChunkDeleteArgs} args - Arguments to delete one Chunk.
@@ -637,24 +457,6 @@ export interface ChunkDelegate<ExtArgs extends runtime.Types.Extensions.Internal
      */
     updateManyAndReturn<T extends ChunkUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, ChunkUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ChunkPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
     /**
-     * Create or update one Chunk.
-     * @param {ChunkUpsertArgs} args - Arguments to update or create a Chunk.
-     * @example
-     * // Update or create a Chunk
-     * const chunk = await prisma.chunk.upsert({
-     *   create: {
-     *     // ... data to create a Chunk
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Chunk we want to update
-     *   }
-     * })
-     */
-    upsert<T extends ChunkUpsertArgs>(args: Prisma.SelectSubset<T, ChunkUpsertArgs<ExtArgs>>): Prisma.Prisma__ChunkClient<runtime.Types.Result.GetResult<Prisma.$ChunkPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
-    /**
      * Count the number of Chunks.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
@@ -742,7 +544,7 @@ export interface ChunkDelegate<ExtArgs extends runtime.Types.Extensions.Internal
  */
 export interface Prisma__ChunkClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise";
-    Document<T extends Prisma.DocumentDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DocumentDefaultArgs<ExtArgs>>): Prisma.Prisma__DocumentClient<runtime.Types.Result.GetResult<Prisma.$DocumentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    document<T extends Prisma.DocumentDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DocumentDefaultArgs<ExtArgs>>): Prisma.Prisma__DocumentClient<runtime.Types.Result.GetResult<Prisma.$DocumentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -771,8 +573,6 @@ export interface ChunkFieldRefs {
     readonly id: Prisma.FieldRef<"Chunk", 'String'>;
     readonly documentId: Prisma.FieldRef<"Chunk", 'String'>;
     readonly content: Prisma.FieldRef<"Chunk", 'String'>;
-    readonly createdAt: Prisma.FieldRef<"Chunk", 'DateTime'>;
-    readonly updatedAt: Prisma.FieldRef<"Chunk", 'DateTime'>;
 }
 /**
  * Chunk findUnique
@@ -970,59 +770,6 @@ export type ChunkFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalA
     distinct?: Prisma.ChunkScalarFieldEnum | Prisma.ChunkScalarFieldEnum[];
 };
 /**
- * Chunk create
- */
-export type ChunkCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Chunk
-     */
-    select?: Prisma.ChunkSelect<ExtArgs> | null;
-    /**
-     * Omit specific fields from the Chunk
-     */
-    omit?: Prisma.ChunkOmit<ExtArgs> | null;
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: Prisma.ChunkInclude<ExtArgs> | null;
-    /**
-     * The data needed to create a Chunk.
-     */
-    data: Prisma.XOR<Prisma.ChunkCreateInput, Prisma.ChunkUncheckedCreateInput>;
-};
-/**
- * Chunk createMany
- */
-export type ChunkCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Chunks.
-     */
-    data: Prisma.ChunkCreateManyInput | Prisma.ChunkCreateManyInput[];
-    skipDuplicates?: boolean;
-};
-/**
- * Chunk createManyAndReturn
- */
-export type ChunkCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Chunk
-     */
-    select?: Prisma.ChunkSelectCreateManyAndReturn<ExtArgs> | null;
-    /**
-     * Omit specific fields from the Chunk
-     */
-    omit?: Prisma.ChunkOmit<ExtArgs> | null;
-    /**
-     * The data used to create many Chunks.
-     */
-    data: Prisma.ChunkCreateManyInput | Prisma.ChunkCreateManyInput[];
-    skipDuplicates?: boolean;
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: Prisma.ChunkIncludeCreateManyAndReturn<ExtArgs> | null;
-};
-/**
  * Chunk update
  */
 export type ChunkUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1092,35 +839,6 @@ export type ChunkUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extension
      * Choose, which related nodes to fetch as well
      */
     include?: Prisma.ChunkIncludeUpdateManyAndReturn<ExtArgs> | null;
-};
-/**
- * Chunk upsert
- */
-export type ChunkUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Chunk
-     */
-    select?: Prisma.ChunkSelect<ExtArgs> | null;
-    /**
-     * Omit specific fields from the Chunk
-     */
-    omit?: Prisma.ChunkOmit<ExtArgs> | null;
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: Prisma.ChunkInclude<ExtArgs> | null;
-    /**
-     * The filter to search for the Chunk to update in case it exists.
-     */
-    where: Prisma.ChunkWhereUniqueInput;
-    /**
-     * In case the Chunk found by the `where` argument doesn't exist, create a new Chunk with this data.
-     */
-    create: Prisma.XOR<Prisma.ChunkCreateInput, Prisma.ChunkUncheckedCreateInput>;
-    /**
-     * In case the Chunk was found with the provided `where` argument, update it with this data.
-     */
-    update: Prisma.XOR<Prisma.ChunkUpdateInput, Prisma.ChunkUncheckedUpdateInput>;
 };
 /**
  * Chunk delete
